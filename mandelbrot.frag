@@ -46,8 +46,8 @@ void main() {
     // In shaders, the RGB color spectrum goes from 0 - 1 instead of 0 - 255
 
     // gl_FragColor is a built in shader variable, and you .frag file must contain it
-    vec2 uv = (gl_FragCoord.xy - 0.5 * u_resolution.xy ) / u_resolution.x; 
-    vec2 c = Area.xy + uv * Area.zw; 
+    vec2 uv = (gl_FragCoord.xy - 0.5 * u_resolution.xy ) / u_resolution.x;
+    vec2 c = Area.xy + uv * Area.zw;
     c = rotate2D(c, Area.xy, angle);
 
     float l = smoothM < 1. ? mandelbrot(c) : smoothMandelbrot(c);
