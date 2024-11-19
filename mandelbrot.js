@@ -135,13 +135,13 @@ function pressed() {
 
   if (keyIsDown(unchar('X'))) { angle -= inc; }
 
-  const dir = [inc * scale * Math.cos(-angle), inc * scale * Math.cos(-angle)];
+  const dir = [inc * scale * Math.cos(-angle), inc * scale * Math.sin(-angle)];
 
   if (keyIsDown(RIGHT_ARROW)) { Area[0] += dir[0]; Area[1] += dir[1]; }
 
-  if (keyIsDown(LEFT_ARROW)) { Area[0] -= dir[0]; Area[1] -= dir[1]; }
+  if (keyIsDown(LEFT_ARROW)) { Area[0] += -dir[0]; Area[1] += -dir[1]; }
 
-  if (keyIsDown(DOWN_ARROW)) { Area[0] -= -dir[1]; Area[1] -= dir[0]; }
+  if (keyIsDown(DOWN_ARROW)) { Area[0] += dir[1]; Area[1] += -dir[0]; }
 
   if (keyIsDown(UP_ARROW)) { Area[0] += -dir[1]; Area[1] += dir[0]; }
 }
